@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ipwiz.vercel.app)",
+      "WebFetch(domain:stockometer.vercel.app)",
+      "Bash(curl -sL \"https://ipwiz.vercel.app\" -o /tmp/ipwiz.html)",
+      "Bash(curl -sL \"https://stockometer.vercel.app\" -o /tmp/stockometer.html)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://ipwiz.vercel.app\" -o /tmp/ipwiz.html)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://stockometer.vercel.app\" -o /tmp/stockometer.html)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://ipwiz.vercel.app/_next/static/chunks/0hfqvyvd6uaia.css\" -o /tmp/ipwiz.css)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://stockometer.vercel.app/_next/static/chunks/06fj034psrpxu.css\" -o /tmp/sm.css)",
+      "Bash(npx tsc *)",
+      "Bash(node -e \"const p=require\\('/Users/favor/Documents/workspace/personal/DevTools/postack/node_modules/react-leaflet/package.json'\\); console.log\\('react-leaflet', p.version, 'peerDeps:', JSON.stringify\\(p.peerDependencies\\)\\); const l=require\\('/Users/favor/Documents/workspace/personal/DevTools/postack/node_modules/leaflet/package.json'\\); console.log\\('leaflet', l.version\\);\")",
+      "Bash(curl -sI -A \"Mozilla/5.0\" \"https://flagcdn.com/h20/us.png\")",
+      "Bash(curl -sI -A \"Mozilla/5.0\" \"https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/us.svg\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://flagcdn.com/h20/us.png\" -o /tmp/us-flag.png)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/tmp/us-flag.png'\\); print\\('size:', img.size, 'mode:', img.mode\\); colors = img.getcolors\\(maxcolors=1000\\); print\\('unique colors:', len\\(colors\\) if colors else '>1000'\\)\")",
+      "Bash(curl -sI -A \"Mozilla/5.0\" \"https://flagcdn.com/us.svg\")"
+    ]
+  }
+}

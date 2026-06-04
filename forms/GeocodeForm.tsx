@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -18,14 +18,20 @@ export type IGeocodeForm = z.infer<typeof geocodeSchema>;
 interface IGeocodeFormProps {
   onSubmit: (data: IGeocodeForm) => Promise<void>;
   isLoading: boolean;
+  initialQuery?: string;
 }
 
-export const GeocodeForm: FC<IGeocodeFormProps> = ({ onSubmit, isLoading }) => {
+export const GeocodeForm: FC<IGeocodeFormProps> = ({
+  onSubmit,
+  isLoading,
+  initialQuery,
+}) => {
   const {
     register,
     handleSubmit,
     setValue,
-    formState: { errors },
+    reset,
+    formState: { errors, isDirty },
     control,
   } = useForm<IGeocodeForm>({
     resolver: zodResolver(geocodeSchema),
@@ -34,6 +40,12 @@ export const GeocodeForm: FC<IGeocodeFormProps> = ({ onSubmit, isLoading }) => {
       type: 'forward',
     },
   });
+
+  useEffect(() => {
+    if (initialQuery && !isDirty) {
+      reset({ query: initialQuery, type: 'forward' });
+    }
+  }, [initialQuery, isDirty, reset]);
 
   const currentType = useWatch({
     control,

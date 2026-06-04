@@ -17,6 +17,7 @@ export interface IGeocodingData {
   country_code: string;
   continent: string;
   label: string;
+  map_url?: string;
 }
 
 export interface IGeocodingResponse {

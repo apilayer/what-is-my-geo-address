@@ -1,22 +1,9 @@
 'use client';
 
 import { FC, useState } from 'react';
-import dynamic from 'next/dynamic';
 import { IGeocodingData } from '@/interfaces/geocoding.interface';
 import { Copy, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-const ResultMap = dynamic(
-  () => import('./ResultMap').then((m) => m.ResultMap),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex h-[320px] w-full items-center justify-center bg-bg-elev-2">
-        <span className="mono text-xs text-fg-dim animate-pulse">loading map…</span>
-      </div>
-    ),
-  }
-);
 
 interface IResultCardProps {
   data: IGeocodingData;
@@ -47,6 +34,22 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
   const displayValue = type === 'forward' ? coordsString : addressString;
   const contextValue = type === 'forward' ? addressString : coordsString;
   const contextLabel = type === 'forward' ? 'address' : 'coordinates';
+
+  // Rebuild PositionStack's map_url with a tight bbox so the map zooms in
+  // close (~street/building level) regardless of result granularity.
+  // bbox order is: lngEast, latNorth, lngWest, latSouth.
+  const zoomedMapUrl = (() => {
+    if (typeof data.latitude !== 'number' || typeof data.longitude !== 'number') {
+      return data.map_url;
+    }
+    const delta = 0.0006; // ~70m half-width — close-up building view
+    const { latitude: lat, longitude: lng } = data;
+    return (
+      `https://positionstack.com/download/map.html` +
+      `?bbox=${lng + delta},${lat + delta},${lng - delta},${lat - delta}` +
+      `&marker=${lat},${lng}`
+    );
+  })();
 
   return (
     <div
@@ -156,8 +159,8 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
         </div>
       </div>
 
-      {/* Map section */}
-      {typeof data.latitude === 'number' && typeof data.longitude === 'number' && (
+      {/* Map section — served directly by PositionStack via map_url */}
+      {zoomedMapUrl && (
         <div className="border-t border-border">
           <div className="flex items-center justify-between border-b border-border px-5 py-3">
             <div className="flex items-center gap-2">
@@ -169,18 +172,23 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
               </span>
             </div>
             <a
-              href={`https://www.openstreetmap.org/?mlat=${data.latitude}&mlon=${data.longitude}#map=15/${data.latitude}/${data.longitude}`}
+              href={zoomedMapUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mono text-[11px] text-fg-muted transition hover:text-fg"
             >
-              open in osm →
+              open map →
             </a>
           </div>
-          <ResultMap
-            latitude={data.latitude}
-            longitude={data.longitude}
-            label={addressString}
+          <iframe
+            src={zoomedMapUrl}
+            title={`Map of ${addressString}`}
+            className="block h-[360px] w-full border-0"
+            style={{ background: '#fff', filter: 'invert(1) hue-rotate(180deg)' }}
+            scrolling="no"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin"
           />
         </div>
       )}

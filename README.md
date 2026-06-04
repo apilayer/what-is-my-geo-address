@@ -8,7 +8,7 @@ Built on the [PositionStack](https://positionstack.com) API by [APILayer](https:
 
 - **Forward geocoding** — address → latitude/longitude
 - **Reverse geocoding** — latitude/longitude → address
-- **Map preview** — Leaflet + OpenStreetMap (Carto Dark Matter tiles), with a deep-link to OSM
+- **Map preview** — embedded directly from PositionStack's `map_url` (OpenStreetMap-based)
 - **Country flag** — SVG flag rendered from the ISO country code
 - **Copy-to-clipboard** for the primary result
 - Dark, monospace, developer-tool aesthetic
@@ -18,8 +18,7 @@ Built on the [PositionStack](https://positionstack.com) API by [APILayer](https:
 - Next.js 16 (App Router, Turbopack) on React 19
 - TypeScript, Tailwind CSS v4
 - `react-hook-form` + `zod` for form validation
-- `react-leaflet` + `leaflet` for the map
-- Carto Dark Matter tiles for the map basemap
+- Map preview embedded from PositionStack's `map_url` (OpenStreetMap tiles)
 - [flagcdn.com](https://flagcdn.com) for country flag SVGs
 
 ## Getting Started

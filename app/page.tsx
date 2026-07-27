@@ -52,7 +52,7 @@ const GithubIcon = ({ size = 12 }: { size?: number }) => (
 function HeroBanner() {
   return (
     <a
-      href="https://positionstack.com/signup/free"
+      href="https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section"
       target="_blank"
       rel="noopener noreferrer"
       className="group relative block h-48 w-full select-none overflow-hidden border-b border-[#0052CC]/30 bg-[#070b18] transition hover:border-[#0052CC]/60"
@@ -110,7 +110,7 @@ function HeroBanner() {
 function AttributionBanner() {
   return (
     <a
-      href="https://positionstack.com/signup/free"
+      href="https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 group block w-[420px] max-w-[calc(100vw-2rem)] h-[42px] rounded-lg overflow-hidden shadow-2xl border border-[#0052CC]/30 hover:border-[#0052CC]/70 transition select-none"
@@ -309,7 +309,7 @@ export default function Home() {
                   powered by
                 </span>
                 <a
-                  href="https://positionstack.com"
+                  href="`https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center opacity-80 transition hover:opacity-100"

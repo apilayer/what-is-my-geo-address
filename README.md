@@ -2,7 +2,7 @@
 
 A geocoding tool for developers. Convert between street addresses and GPS coordinates in a single request, with a map preview, country flag, and copyable result.
 
-Built on the [PositionStack](https://positionstack.com) API by [APILayer](https://apilayer.com).
+Built on the [PositionStack](https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section) API by [APILayer](https://apilayer.com).
 
 ## Features
 
@@ -25,7 +25,7 @@ Built on the [PositionStack](https://positionstack.com) API by [APILayer](https:
 
 ### 1. Get a PositionStack API key
 
-Sign up at [positionstack.com](https://positionstack.com) and grab your free API key.
+Sign up for a free account at [APILayer](https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section) and grab your free API key.
 
 ### 2. Set up environment variables
 
@@ -87,6 +87,6 @@ This app deploys cleanly to [Vercel](https://vercel.com/new) — just import the
 
 ## Credits
 
-- Geocoding by [PositionStack](https://positionstack.com) / [APILayer](https://apilayer.com)
+- Geocoding by [PositionStack](https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section) / [APILayer](https://apilayer.com)
 - Map tiles © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, © [CARTO](https://carto.com/attributions)
 - Country flags by [flagcdn.com](https://flagcdn.com)

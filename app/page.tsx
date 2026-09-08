@@ -6,6 +6,7 @@ import { ResultCard } from '@/components/ui/ResultCard';
 import { geocodingService } from '@/services/geocoding.service';
 import { IGeocodingData } from '@/interfaces/geocoding.interface';
 import { AlertCircle } from 'lucide-react';
+import { FAQSection } from '@/components/features/FAQSection';
 
 const WimgaLogo = ({ size = 22 }: { size?: number }) => (
   <svg
@@ -390,6 +391,9 @@ export default function Home() {
             <ResultCard data={result} type={lastType} />
           </div>
         )}
+
+        {/* FAQ Section */}
+        <FAQSection />
 
         {/* Footer */}
         <footer className="mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-fg-dim">

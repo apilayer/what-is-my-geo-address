@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  basePath: '/devtools/what-is-my-geo-address',
+  assetPrefix: '/devtools/what-is-my-geo-address',
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

@@ -1,0 +1,74 @@
+# What Is My Geo Address - free forward and reverse geocoding
+
+> A free tool that converts a street address into latitude and longitude, and
+> turns coordinates back into a readable address. Powered by the Positionstack
+> API from APILayer.
+
+## What it answers
+
+- **What is the latitude and longitude of my address?** Enter the address and
+  the coordinates are returned with the matched location and a map.
+- **What address is at these coordinates?** Switch to reverse geocoding and
+  enter latitude and longitude to get the readable address back.
+- **Does it work for places, not just street addresses?** Yes. Place names and
+  postcodes resolve too.
+- **Is there an API behind it?** Positionstack, which does the same lookups
+  programmatically, including batch requests and embeddable maps.
+
+## Forward and reverse geocoding
+
+Forward geocoding turns text a person would write, such as a street address or
+a place name, into a latitude and longitude pair. Reverse geocoding goes the
+other way: given coordinates, it returns the address and administrative
+details registered to that point. Both directions are available here and both
+run against the same Positionstack dataset of more than two billion addresses
+and places.
+
+## Accuracy and limits
+
+- A geocoded point is the centre of the matched address or feature, not a
+  precise position on a building.
+- Ambiguous or partial addresses may match more than one place; the best match
+  is returned first.
+- Coverage and precision vary by country.
+
+## Data source
+
+Positionstack (https://positionstack.com), an APILayer product. Free tier
+available.
+
+## Frequently asked questions
+
+### What Is My Geo Address?
+
+What Is My Geo Address is a free geocoding tool that converts street addresses into geographic coordinates and coordinates back into readable addresses. It supports both forward and reverse geocoding and is powered by Positionstack.
+
+### What is the data source for What Is My Geo Address?
+
+What Is My Geo Address is powered by Positionstack API, a global geocoding API from APILayer. Positionstack provides the geocoding data used to convert addresses into latitude and longitude coordinates and to reverse geocode coordinates into location information.
+
+### How do I find the latitude and longitude of an address?
+
+Enter an address into the What Is My Geo Address tool and select the forward geocoding option. The tool converts the address into geographic coordinates, including its latitude and longitude. Developers can perform the same type of lookup programmatically using the Positionstack API.
+
+### What is reverse geocoding?
+
+Reverse geocoding is the process of converting geographic coordinates, such as latitude and longitude, into a readable address or location. Positionstack supports reverse geocoding, allowing developers to send coordinates to the API and retrieve associated address and location information.
+
+### What is Positionstack API?
+
+Positionstack is a real-time geocoding API that lets developers convert addresses into coordinates and coordinates into addresses. It supports forward and reverse geocoding, batch requests, embeddable maps, and global coverage of more than 2 billion addresses and places.
+
+### How can I use Positionstack API for address geocoding?
+
+Developers can send an address or place name to Positionstack's forward geocoding endpoint to retrieve its geographic coordinates and location details. For reverse geocoding, developers can provide latitude and longitude coordinates to retrieve the corresponding address. Positionstack returns structured location data that can be integrated into websites, mobile apps, maps, and other applications.
+
+### What can I build with a geocoding API like Positionstack?
+
+Positionstack can be used to build address search and validation tools, location-based applications, mapping interfaces, delivery and logistics platforms, store locators, property applications, and data visualization tools. Its forward and reverse geocoding capabilities make it useful whenever an application needs to convert between human-readable addresses and geographic coordinates.
+
+## Links
+
+- Tool: https://apilayer.com/devtools/what-is-my-geo-address
+- Positionstack API: https://positionstack.com
+- APILayer: https://apilayer.com

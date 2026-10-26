@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { assetPath } from "@/lib/assets";
 import { GeocodeForm, IGeocodeForm } from '@/forms/GeocodeForm';
 import { ResultCard } from '@/components/ui/ResultCard';
 import { geocodingService } from '@/services/geocoding.service';
@@ -31,7 +32,7 @@ const WimgaLogo = ({ size = 22 }: { size?: number }) => (
       stroke="none"
       fontSize="6.5"
       fontWeight={700}
-      fontFamily="var(--font-geist-mono), ui-monospace, monospace"
+      fontFamily="var(--font-source-code), ui-monospace, monospace"
     >
       ?
     </text>
@@ -70,14 +71,14 @@ function HeroBanner() {
         <div className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/positionstack-white.png"
+            src={assetPath("/brand/positionstack-white.png")}
             alt="PositionStack"
             className="h-4 w-auto"
           />
           <span className="h-4 w-px bg-white/25" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/apilayer-footer.svg"
+            src={assetPath("/brand/apilayer-footer.svg")}
             alt="APILayer"
             className="h-4 w-auto"
           />
@@ -95,7 +96,7 @@ function HeroBanner() {
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="inline-flex items-center gap-1.5 rounded-md bg-[#0052CC] px-3.5 py-2 text-xs font-bold text-white shadow-lg transition group-hover:bg-[#0066FF]">
+          <span className="inline-flex items-center gap-1.5 rounded-md bg-[#0052CC] px-3.5 py-2 text-xs font-bold text-white transition group-hover:bg-[#0066FF]">
             Get Your API Key
             <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </span>
@@ -114,7 +115,7 @@ function AttributionBanner() {
       href="https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 group block w-[420px] max-w-[calc(100vw-2rem)] h-[42px] rounded-lg overflow-hidden shadow-2xl border border-[#0052CC]/30 hover:border-[#0052CC]/70 transition select-none"
+      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 group block w-[420px] max-w-[calc(100vw-2rem)] h-[42px] rounded-lg overflow-hidden border border-[#0052CC]/30 hover:border-[#0052CC]/70 transition select-none"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -128,14 +129,14 @@ function AttributionBanner() {
         <div className="flex shrink-0 items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/positionstack-white.png"
+            src={assetPath("/brand/positionstack-white.png")}
             alt="PositionStack"
             className="h-3.5 w-auto"
           />
           <span className="h-3 w-px bg-white/25" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/apilayer-footer.svg"
+            src={assetPath("/brand/apilayer-footer.svg")}
             alt="APILayer"
             className="h-3 w-auto"
           />
@@ -239,7 +240,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 text-fg">
               <WimgaLogo size={20} />
-              <span className="mono text-sm font-semibold tracking-tight">
+              <span className="label text-sm font-semibold tracking-tight">
                 WhatIsMyGeoAddress
               </span>
             </div>
@@ -248,7 +249,7 @@ export default function Home() {
               <span>by</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/apilayer-footer.svg"
+                src={assetPath("/brand/apilayer-footer.svg")}
                 alt="APILayer"
                 className="h-3 w-auto opacity-80"
               />
@@ -263,7 +264,7 @@ export default function Home() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mono inline-flex h-7 items-center gap-1.5 rounded-md border border-border bg-bg-elev-2 px-2 text-[11px] text-fg-muted transition hover:text-fg"
+              className="label inline-flex h-7 items-center gap-1.5 rounded-md border border-border bg-bg-elev-2 px-2 text-[11px] text-fg-muted transition hover:text-fg"
             >
               <GithubIcon size={12} />
               <span>github</span>
@@ -279,16 +280,16 @@ export default function Home() {
         <section className="overflow-hidden rounded-xl border border-border bg-bg-elev">
           <div className="flex items-center justify-between border-b border-border px-5 py-3">
             <div className="flex items-center gap-2">
-              <span className="mono text-[10px] uppercase tracking-wider text-fg-dim">
+              <span className="label text-[10px] uppercase tracking-wider text-fg-dim">
                 tool
               </span>
-              <span className="mono text-xs text-fg-muted">— geocode</span>
+              <span className="label text-xs text-fg-muted">— geocode</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className={`mono text-[10px] uppercase tracking-wider ${statusColor}`}>
+              <span className={`label text-[10px] uppercase tracking-wider ${statusColor}`}>
                 ●
               </span>
-              <span className="mono text-[10px] uppercase tracking-wider text-fg-dim">
+              <span className="label text-[10px] uppercase tracking-wider text-fg-dim">
                 {statusLabel}
               </span>
             </div>
@@ -296,21 +297,19 @@ export default function Home() {
 
           <div className="grid gap-6 p-5 md:grid-cols-[1.2fr_1fr] md:p-7">
             <div className="flex flex-col gap-4">
-              <h1 className="mono text-2xl font-semibold tracking-tight text-fg md:text-3xl leading-[1.2]">
-                find precise coordinates
-                <br />
-                <span className="text-fg-muted">for any address on earth.</span>
+              <h1 className="text-[2rem] font-semibold leading-[1.24] text-fg md:text-[2.8125rem] md:leading-[3.5rem]">
+                What is the latitude and longitude of my address?
               </h1>
-              <p className="text-sm text-fg-muted max-w-xl leading-relaxed">
-                Convert between street addresses and GPS coordinates in a single
-                request.
+              <p className="max-w-2xl text-base leading-relaxed text-fg-muted md:text-[1.1875rem] md:leading-[1.7]">
+                Convert a street address into coordinates, or turn coordinates
+                back into a readable address, in one request.
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-1">
-                <span className="mono text-[10px] uppercase tracking-wider text-fg-dim">
+                <span className="label text-[10px] uppercase tracking-wider text-fg-dim">
                   powered by
                 </span>
                 <a
-                  href="`https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section"
+                  href="https://apilayer.com/products/positionstack/?utm_source=postack_devtools&utm_medium=internal&utm_campaign=featured_section"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center opacity-80 transition hover:opacity-100"
@@ -318,7 +317,7 @@ export default function Home() {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/brand/positionstack-white.png"
+                    src={assetPath("/brand/positionstack-white.png")}
                     alt="PositionStack"
                     className="h-4 w-auto"
                   />
@@ -333,7 +332,7 @@ export default function Home() {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/brand/apilayer-footer.svg"
+                    src={assetPath("/brand/apilayer-footer.svg")}
                     alt="APILayer"
                     className="h-3.5 w-auto"
                   />
@@ -346,25 +345,25 @@ export default function Home() {
                 <span className="text-[10px] font-medium uppercase tracking-wider text-fg-dim">
                   forward
                 </span>
-                <span className="mono text-xs text-fg-muted">address → lat,lng</span>
+                <span className="label text-xs text-fg-muted">address → lat,lng</span>
               </div>
               <div className="flex flex-col gap-1 border-l border-border pl-3">
                 <span className="text-[10px] font-medium uppercase tracking-wider text-fg-dim">
                   reverse
                 </span>
-                <span className="mono text-xs text-fg-muted">lat,lng → address</span>
+                <span className="label text-xs text-fg-muted">lat,lng → address</span>
               </div>
               <div className="flex flex-col gap-1 border-l border-border pl-3">
                 <span className="text-[10px] font-medium uppercase tracking-wider text-fg-dim">
                   coverage
                 </span>
-                <span className="mono text-xs text-fg-muted">global</span>
+                <span className="label text-xs text-fg-muted">global</span>
               </div>
               <div className="flex flex-col gap-1 border-l border-border pl-3">
                 <span className="text-[10px] font-medium uppercase tracking-wider text-fg-dim">
                   source
                 </span>
-                <span className="mono text-xs text-fg-muted">positionstack</span>
+                <span className="label text-xs text-fg-muted">positionstack</span>
               </div>
             </div>
           </div>
@@ -381,7 +380,7 @@ export default function Home() {
         {error && (
           <div className="flex items-start gap-3 overflow-hidden rounded-xl border border-danger/40 bg-danger/10 px-5 py-3 animate-in">
             <AlertCircle className="text-danger shrink-0 mt-0.5" size={16} />
-            <p className="mono text-sm text-danger">— {error}</p>
+            <p className="label text-sm text-danger">— {error}</p>
           </div>
         )}
 

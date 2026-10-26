@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-open-sans);
+  --font-mono: var(--font-source-code);
 
-  --color-bg: #0a0a0b;
-  --color-bg-elev: #111113;
-  --color-bg-elev-2: #17171a;
-  --color-fg: #ededed;
-  --color-fg-muted: #a1a1aa;
+  /* Shared APILayer devtool system with Positionstack's own deep blue as the
+     accent, since Positionstack is the API this tool runs on. */
+  --color-bg: #fafafa;
+  --color-bg-elev: #ffffff;
+  --color-bg-elev-2: #f4f4f5;
+  --color-fg: #18181b;
+  --color-fg-muted: #52525b;
   --color-fg-dim: #71717a;
-  --color-border: #27272a;
-  --color-border-strong: #3f3f46;
-  --color-accent: #3b82f6;
-  --color-accent-dim: #1d4ed8;
-  --color-info: #38bdf8;
-  --color-danger: #f43f5e;
+  --color-border: #e4e4e7;
+  --color-border-strong: #d4d4d8;
+  --color-accent: #004c74;
+  --color-accent-dim: #013b59;
+  --color-accent-bright: #2eaae1;
+  --color-ok: #17865c;
+  --color-info: #2056d4;
+  --color-warn: #b26a00;
+  --color-danger: #d92d4b;
 }
 
 :root {
-  --glow-a: #3b82f614;
-  --glow-b: #1d4ed80f;
+  --glow-a: #004c740d;
+  --glow-b: #2eaae10a;
 }
 
 html,
@@ -30,7 +35,7 @@ body {
 }
 
 body {
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
   background-image:
     radial-gradient(circle at 0% 0%, var(--glow-a), transparent 55%),
     radial-gradient(circle at 100% 0%, var(--glow-b), transparent 45%);
@@ -39,17 +44,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.mono {
-  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+/* UI labels: small and wide-tracked, but in the sans face. The code face is
+   reserved for `.code`, because visitors squint at monospaced prose. */
+.label {
+  letter-spacing: 0.055em;
+  font-feature-settings: "tnum" 1;
 }
 
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
+.code {
+  font-family: var(--font-source-code), ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0;
 }
+
+/* Keep collapsed answers in the DOM for crawlers but out of sight. */
+[hidden] {
+  display: none !important;
+}
+
 
 .pulse-dot {
-  animation: pulseDot 1.6s ease-in-out infinite;
 }
 
 @keyframes fadeIn {

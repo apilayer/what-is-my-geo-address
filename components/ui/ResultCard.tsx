@@ -61,14 +61,14 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
       {/* Header strip */}
       <div className="flex items-center justify-between border-b border-border px-5 py-3">
         <div className="flex items-center gap-2">
-          <span className="mono text-[10px] uppercase tracking-wider text-fg-dim">
+          <span className="label text-[10px] uppercase tracking-wider text-fg-dim">
             result
           </span>
-          <span className="mono text-xs text-fg-muted">— {primaryLabel}</span>
+          <span className="label text-xs text-fg-muted">— {primaryLabel}</span>
         </div>
         <button
           onClick={() => handleCopy(copyTarget)}
-          className="mono inline-flex h-7 items-center gap-1.5 rounded-md border border-border bg-bg-elev-2 px-2 text-[11px] text-fg-muted transition hover:text-fg"
+          className="label inline-flex h-7 items-center gap-1.5 rounded-md border border-border bg-bg-elev-2 px-2 text-[11px] text-fg-muted transition hover:text-fg"
         >
           {copied ? (
             <>
@@ -87,14 +87,14 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
       {/* Body */}
       <div className="flex flex-col gap-6 p-5 md:p-7">
         <div className="flex flex-col gap-2">
-          <span className="mono text-[10px] uppercase tracking-wider text-fg-dim">
+          <span className="label text-[10px] uppercase tracking-wider text-fg-dim">
             {primaryLabel}
           </span>
-          <p className="mono text-3xl font-semibold tracking-tight text-fg md:text-4xl break-all leading-tight">
+          <p className="label text-3xl font-semibold tracking-tight text-fg md:text-4xl break-all leading-tight">
             {displayValue}
           </p>
           <div className="flex items-baseline gap-2 text-fg-muted">
-            <span className="mono text-[10px] uppercase tracking-wider text-fg-dim shrink-0">
+            <span className="label text-[10px] uppercase tracking-wider text-fg-dim shrink-0">
               {contextLabel}
             </span>
             <span className="text-sm break-words">{contextValue}</span>
@@ -120,7 +120,7 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
                     }}
                   />
                 )}
-                <span className="mono truncate text-sm text-fg">
+                <span className="label truncate text-sm text-fg">
                   {data.country}
                 </span>
               </div>
@@ -132,7 +132,7 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
             <span className="text-[10px] font-medium uppercase tracking-wider text-fg-dim">
               region
             </span>
-            <span className="mono truncate text-sm text-fg">
+            <span className="label truncate text-sm text-fg">
               {data.region || <span className="text-fg-dim">—</span>}
             </span>
           </div>
@@ -140,7 +140,7 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
             <span className="text-[10px] font-medium uppercase tracking-wider text-fg-dim">
               city
             </span>
-            <span className="mono truncate text-sm text-fg">
+            <span className="label truncate text-sm text-fg">
               {data.locality || <span className="text-fg-dim">—</span>}
             </span>
           </div>
@@ -148,7 +148,7 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
             <span className="text-[10px] font-medium uppercase tracking-wider text-fg-dim">
               confidence
             </span>
-            <span className="mono truncate text-sm text-fg">
+            <span className="label truncate text-sm text-fg">
               {data.confidence !== undefined ? (
                 `${(data.confidence * 100).toFixed(0)}%`
               ) : (
@@ -164,10 +164,10 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
         <div className="border-t border-border">
           <div className="flex items-center justify-between border-b border-border px-5 py-3">
             <div className="flex items-center gap-2">
-              <span className="mono text-[10px] uppercase tracking-wider text-fg-dim">
+              <span className="label text-[10px] uppercase tracking-wider text-fg-dim">
                 map
               </span>
-              <span className="mono text-xs text-fg-muted">
+              <span className="label text-xs text-fg-muted">
                 — {data.latitude.toFixed(6)}, {data.longitude.toFixed(6)}
               </span>
             </div>
@@ -175,7 +175,7 @@ export const ResultCard: FC<IResultCardProps> = ({ data, type, className }) => {
               href={zoomedMapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mono text-[11px] text-fg-muted transition hover:text-fg"
+              className="label text-[11px] text-fg-muted transition hover:text-fg"
             >
               open map →
             </a>
